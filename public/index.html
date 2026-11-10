@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Antigravity App</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --primary-hover: #0284c7;
+      --accent: #f59e0b;
+      --border: #334155;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+    .container {
+      width: 100%;
+      max-width: 720px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+    }
+    .card h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--primary);
+      font-weight: 600;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .service-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .service-item .icon {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .service-item .title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .service-item .status {
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-top: 0.25rem;
+    }
+    code {
+      background: #090d16;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: monospace;
+      color: #38bdf8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🚀 My Antigravity App</h1>
+      <p class="subtitle">Firebase Frontend Starter Workspace</p>
+    </header>
+
+    <div class="card">
+      <h2>Status Inisialisasi Project <span class="badge">Terkoneksi</span></h2>
+      <p style="color: var(--text-muted); line-height: 1.6;">
+        Direktori lokal telah dikonfigurasi dengan Firebase CLI dan MCP Server. Layanan yang disiapkan meliputi:
+      </p>
+      <div class="services-grid">
+        <div class="service-item">
+          <div class="icon">🌐</div>
+          <div class="title">Hosting</div>
+          <div class="status">Configured</div>
+        </div>
+        <div class="service-item">
+          <div class="icon">🔥</div>
+          <div class="title">Firestore</div>
+          <div class="status">Rules Ready</div>
+        </div>
+        <div class="service-item">
+          <div class="icon">📦</div>
+          <div class="title">Storage</div>
+          <div class="status">Rules Ready</div>
+        </div>
+        <div class="service-item">
+          <div class="icon">🔐</div>
+          <div class="title">Auth</div>
+          <div class="status">Ready</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
