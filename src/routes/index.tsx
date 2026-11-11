@@ -1,9 +1,11 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { RootLayout } from '@/components/layout/RootLayout';
 import { ProtectedRoute } from '@/components/auth/ProtectedRoute';
 
 import { HomePage } from '@/pages/HomePage';
-import { MarketplacePage } from '@/pages/MarketplacePage';
+import { CatalogPage } from '@/pages/CatalogPage';
+import { ChatPage } from '@/pages/ChatPage';
+import { WishlistPage } from '@/pages/WishlistPage';
 import { ProductDetailPage } from '@/pages/ProductDetailPage';
 import { LoginPage } from '@/pages/LoginPage';
 import { RegisterPage } from '@/pages/RegisterPage';
@@ -23,8 +25,16 @@ export const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
+        path: 'catalog',
+        element: <CatalogPage />,
+      },
+      {
         path: 'marketplace',
-        element: <MarketplacePage />,
+        element: <Navigate to="/catalog" replace />,
+      },
+      {
+        path: 'chat',
+        element: <ChatPage />,
       },
       {
         path: 'products/:id',
@@ -47,16 +57,20 @@ export const router = createBrowserRouter([
         element: <ProtectedRoute />,
         children: [
           {
+            path: 'wishlist',
+            element: <WishlistPage />,
+          },
+          {
+            path: 'profile',
+            element: <ProfilePage />,
+          },
+          {
             path: 'create-product',
             element: <CreateProductPage />,
           },
           {
             path: 'my-products',
             element: <MyProductsPage />,
-          },
-          {
-            path: 'profile',
-            element: <ProfilePage />,
           },
         ],
       },

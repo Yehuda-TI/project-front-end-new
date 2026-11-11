@@ -33,7 +33,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         const docRef = doc(db, 'users', uid);
         const snapshot = await getDoc(docRef);
         if (snapshot.exists()) {
-          setProfile(snapshot.data() as UserProfile);
+          const data = snapshot.data();
+          setProfile({
+            ...data,
+            createdAt: typeof data.createdAt?.toMillis === 'function' ? data.createdAt.toMillis() : (data.createdAt || Date.now()),
+            updatedAt: typeof data.updatedAt?.toMillis === 'function' ? data.updatedAt.toMillis() : (data.updatedAt || Date.now()),
+          } as UserProfile);
           return;
         }
       }
@@ -43,7 +48,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       if (localProfile) {
         setProfile(JSON.parse(localProfile));
       } else {
-        setProfile({
+        const defaultProfile: UserProfile = {
           uid,
           displayName: user?.displayName || 'Mahasiswa Kampus',
           email: user?.email || 'mahasiswa@campus.ac.id',
@@ -51,9 +56,16 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           whatsappNumber: '6281234567890',
           bio: 'Mahasiswa aktif kampus',
           campusName: 'Universitas Indonesia',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        });
+          preferences: {
+            budgetMin: 100000,
+            budgetMax: 10000000,
+            favoriteCategories: ['Laptop & Komputer', 'Smartphone & Tablet'],
+          },
+          createdAt: Date.now(),
+          updatedAt: Date.now(),
+        };
+        setProfile(defaultProfile);
+        localStorage.setItem('campus_market_demo_profile', JSON.stringify(defaultProfile));
       }
     } catch (err) {
       console.error('Error fetching user profile:', err);
@@ -68,22 +80,27 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const loginAsDemoUser = () => {
     const demoUser = {
-      uid: 'demo-seller-1',
+      uid: 'demo-user-1',
       displayName: 'Dimas Pratama',
       email: 'dimas@student.campus.ac.id',
       photoURL: null,
     } as unknown as User;
 
     const demoProfile: UserProfile = {
-      uid: 'demo-seller-1',
+      uid: 'demo-user-1',
       displayName: 'Dimas Pratama',
       email: 'dimas@student.campus.ac.id',
       photoURL: null,
       whatsappNumber: '6281234567890',
-      bio: 'Mahasiswa semester akhir, suka jual buku & perlengkapan kos preloved',
+      bio: 'Mahasiswa semester akhir, antusias teknologi & gadget kuliah',
       campusName: 'Universitas Indonesia',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      preferences: {
+        budgetMin: 200000,
+        budgetMax: 8000000,
+        favoriteCategories: ['Laptop & Komputer', 'Audio & Aksesori'],
+      },
+      createdAt: Date.now() - 30 * 86400000,
+      updatedAt: Date.now(),
     };
 
     localStorage.setItem('campus_market_demo_user', JSON.stringify(demoUser));

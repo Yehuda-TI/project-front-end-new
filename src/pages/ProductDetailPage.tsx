@@ -262,7 +262,7 @@ export const ProductDetailPage: React.FC = () => {
               </a>
             ) : product.sellerEmail ? (
               <a
-                href={`mailto:${product.sellerEmail}?subject=Pertanyaan produk ${encodeURIComponent(product.title)}`}
+                href={`mailto:${product.sellerEmail}?subject=Pertanyaan produk ${encodeURIComponent(product.title || product.name || '')}`}
                 className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs"
               >
                 Hubungi via Email ({product.sellerEmail})

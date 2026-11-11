@@ -14,133 +14,31 @@ import {
 import { db, isFirebaseConfigured } from '@/lib/firebase';
 import { Product, ProductFilterOptions } from '@/types';
 import { deleteProductImage } from './storage.service';
+import catalogJson from '@/data/products.json';
 
 const PRODUCTS_COLLECTION = 'products';
 const LOCAL_STORAGE_KEY = 'campus_market_custom_products';
 
-// Mock data mahasiswa untuk demo / initial state
-const INITIAL_DEMO_PRODUCTS: Product[] = [
-  {
-    id: 'demo-1',
-    sellerId: 'demo-seller-1',
-    sellerName: 'Dimas Pratama',
-    sellerEmail: 'dimas@student.campus.ac.id',
-    sellerPhotoURL: null,
-    sellerWhatsapp: '6281234567890',
-    title: 'Buku Kalkulus Thomas Edisi 13 (Original)',
-    description: 'Buku wajib kalkulus teknik/mipa. Kondisi 90% mulus, tidak ada coretan pulpen atau halaman sobek. Sangat membantu untuk persiapan UTS/UAS.',
-    price: 125000,
-    category: 'Buku & Kuliah',
-    condition: 'used',
-    imageUrls: [
-      'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80'
-    ],
-    storagePaths: [],
-    status: 'available',
-    createdAt: new Date(Date.now() - 3600000 * 24),
-    updatedAt: new Date(Date.now() - 3600000 * 24),
-  },
-  {
-    id: 'demo-2',
-    sellerId: 'demo-seller-2',
-    sellerName: 'Aulia Rahma',
-    sellerEmail: 'aulia@student.campus.ac.id',
-    sellerPhotoURL: null,
-    sellerWhatsapp: '6289876543210',
-    title: 'iPad 9th Gen 64GB WiFi Space Gray + Apple Pencil 1',
-    description: 'Dijual karena sudah lulus skripsi. Lengkap dengan dus asli, charger original, dan case pelindung. Battery health 92%, layar mulus terpasang paperlike screen protector.',
-    price: 3650000,
-    category: 'Elektronik & Gadget',
-    condition: 'used',
-    imageUrls: [
-      'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=800&q=80'
-    ],
-    storagePaths: [],
-    status: 'available',
-    createdAt: new Date(Date.now() - 3600000 * 12),
-    updatedAt: new Date(Date.now() - 3600000 * 12),
-  },
-  {
-    id: 'demo-3',
-    sellerId: 'demo-seller-3',
-    sellerName: 'Rian Hidayat',
-    sellerEmail: 'rian@student.campus.ac.id',
-    sellerPhotoURL: null,
-    sellerWhatsapp: '6285678901234',
-    title: 'Meja Belajar Lipat Minimalis Kayu Jati Belanda',
-    description: 'Cocok banget untuk kamar kos yang terbatas ruangnya. Bahan kokoh, mudah dilipat dan disimpan di bawah kasur. Masih mulus tanpa cacat.',
-    price: 95000,
-    category: 'Perlengkapan Kos',
-    condition: 'used',
-    imageUrls: [
-      'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=800&q=80'
-    ],
-    storagePaths: [],
-    status: 'available',
-    createdAt: new Date(Date.now() - 3600000 * 6),
-    updatedAt: new Date(Date.now() - 3600000 * 6),
-  },
-  {
-    id: 'demo-4',
-    sellerId: 'demo-seller-4',
-    sellerName: 'Siti Nurhaliza',
-    sellerEmail: 'siti@student.campus.ac.id',
-    sellerPhotoURL: null,
-    sellerWhatsapp: '6281122334455',
-    title: 'Kalkulator Scientific Casio fx-991EX ClassWiz Original',
-    description: 'Bisa dipakai untuk ujian teknik sipil, mesin, elektro, dan akuntansi. Fungsi matriks dan integral normal 100%. Dilengkapi cover pelindung.',
-    price: 180000,
-    category: 'Elektronik & Gadget',
-    condition: 'used',
-    imageUrls: [
-      'https://images.unsplash.com/photo-1611125832047-1d7ad1e8e48f?auto=format&fit=crop&w=800&q=80'
-    ],
-    storagePaths: [],
-    status: 'available',
-    createdAt: new Date(Date.now() - 3600000 * 2),
-    updatedAt: new Date(Date.now() - 3600000 * 2),
-  },
-  {
-    id: 'demo-5',
-    sellerId: 'demo-seller-1',
-    sellerName: 'Dimas Pratama',
-    sellerEmail: 'dimas@student.campus.ac.id',
-    sellerPhotoURL: null,
-    sellerWhatsapp: '6281234567890',
-    title: 'Dispenser Air Mini Galon Bawah Portable',
-    description: 'Sangat hemat listrik untuk anak kos. Kran dingin dan normal lancar, bersih terawat tanpa kerak.',
-    price: 140000,
-    category: 'Perlengkapan Kos',
-    condition: 'used',
-    imageUrls: [
-      'https://images.unsplash.com/photo-1546554137-f86b9593a222?auto=format&fit=crop&w=800&q=80'
-    ],
-    storagePaths: [],
-    status: 'available',
-    createdAt: new Date(Date.now() - 3600000 * 48),
-    updatedAt: new Date(Date.now() - 3600000 * 48),
-  },
-  {
-    id: 'demo-6',
-    sellerId: 'demo-seller-5',
-    sellerName: 'Kevin Wijaya',
-    sellerEmail: 'kevin@student.campus.ac.id',
-    sellerPhotoURL: null,
-    sellerWhatsapp: '6287788990011',
-    title: 'Raket Badminton Yonex Astrox Lite + Senar BG66 Ultimax',
-    description: 'Baru dipakai 2 kali di GOR kampus. Tarikan senar 26 lbs, siap pakai smash. Grip baru diganti warna hitam.',
-    price: 260000,
-    category: 'Hobi & Olahraga',
-    condition: 'used',
-    imageUrls: [
-      'https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=800&q=80'
-    ],
-    storagePaths: [],
-    status: 'available',
-    createdAt: new Date(Date.now() - 3600000 * 30),
-    updatedAt: new Date(Date.now() - 3600000 * 30),
-  }
-];
+// 30 Produk E-Commerce dari src/data/products.json sebagai katalog dasar
+export const CATALOG_PRODUCTS: Product[] = (catalogJson as any[]).map((p, idx) => ({
+  id: p.id || `prod-${String(idx + 1).padStart(3, '0')}`,
+  name: p.name,
+  title: p.name,
+  category: p.category,
+  price: p.price,
+  description: p.description,
+  tags: p.tags || [],
+  imageUrl: p.imageUrl,
+  imageUrls: [p.imageUrl],
+  storagePaths: [],
+  sellerId: 'system-catalog',
+  sellerName: 'Official Campus Store',
+  sellerEmail: 'store@campus.ac.id',
+  condition: 'new',
+  status: 'available',
+  createdAt: Date.now() - (idx * 3600000),
+  updatedAt: Date.now() - (idx * 3600000),
+}));
 
 const getLocalCustomProducts = (): Product[] => {
   try {
@@ -167,8 +65,12 @@ export const createProductListing = async (
     const newProduct: Product = {
       ...productData,
       id: newId,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      name: productData.name || productData.title || 'Produk Baru',
+      title: productData.title || productData.name || 'Produk Baru',
+      imageUrl: productData.imageUrl || (productData.imageUrls && productData.imageUrls[0]) || '',
+      tags: productData.tags || [],
+      createdAt: Date.now(),
+      updatedAt: Date.now(),
     };
     const current = getLocalCustomProducts();
     saveLocalCustomProducts([newProduct, ...current]);
@@ -181,6 +83,10 @@ export const createProductListing = async (
   const fullProduct: Product = {
     ...productData,
     id: productId,
+    name: productData.name || productData.title || 'Produk Baru',
+    title: productData.title || productData.name || 'Produk Baru',
+    imageUrl: productData.imageUrl || (productData.imageUrls && productData.imageUrls[0]) || '',
+    tags: productData.tags || [],
     createdAt: serverTimestamp(),
     updatedAt: serverTimestamp(),
   };
@@ -203,25 +109,35 @@ export const fetchProducts = async (filters?: ProductFilterOptions): Promise<Pro
 
       const snapshot = await getDocs(q);
       snapshot.forEach((d) => {
-        productsList.push(d.data() as Product);
+        const item = d.data() as Product;
+        productsList.push({
+          ...item,
+          name: item.name || item.title || 'Produk',
+          title: item.title || item.name || 'Produk',
+          imageUrl: item.imageUrl || (item.imageUrls && item.imageUrls[0]) || '',
+          tags: item.tags || [],
+        });
       });
     } catch (err) {
-      console.warn('Gagal membaca Firestore, menggunakan data cadangan demo:', err);
+      console.warn('Gagal membaca Firestore, menggunakan katalog lokal:', err);
       productsList = [];
     }
   }
 
-  // Jika Firestore belum diisi atau dalam demo mode, gabungkan local custom products + initial demo
+  // Jika Firestore belum diisi atau dalam mode demo, gabungkan local custom products + katalog 30 produk
   if (productsList.length === 0) {
     const custom = getLocalCustomProducts();
-    productsList = [...custom, ...INITIAL_DEMO_PRODUCTS];
+    productsList = [...custom, ...CATALOG_PRODUCTS];
   }
 
   // Filter client-side
   if (filters?.searchQuery && filters.searchQuery.trim()) {
     const q = filters.searchQuery.toLowerCase().trim();
     productsList = productsList.filter(
-      (p) => p.title.toLowerCase().includes(q) || p.description.toLowerCase().includes(q)
+      (p) =>
+        (p.name || p.title || '').toLowerCase().includes(q) ||
+        (p.description || '').toLowerCase().includes(q) ||
+        (p.tags || []).some((t) => t.toLowerCase().includes(q))
     );
   }
 
@@ -264,15 +180,22 @@ export const fetchProductById = async (id: string): Promise<Product | null> => {
       const docRef = doc(db, PRODUCTS_COLLECTION, id);
       const snap = await getDoc(docRef);
       if (snap.exists()) {
-        return snap.data() as Product;
+        const item = snap.data() as Product;
+        return {
+          ...item,
+          name: item.name || item.title || 'Produk',
+          title: item.title || item.name || 'Produk',
+          imageUrl: item.imageUrl || (item.imageUrls && item.imageUrls[0]) || '',
+          tags: item.tags || [],
+        };
       }
     } catch (err) {
       console.error('Error fetching product by ID from Firestore:', err);
     }
   }
 
-  // Cek custom local products dan demo
-  const allLocal = [...getLocalCustomProducts(), ...INITIAL_DEMO_PRODUCTS];
+  // Cek custom local products dan catalog JSON
+  const allLocal = [...getLocalCustomProducts(), ...CATALOG_PRODUCTS];
   const found = allLocal.find((p) => p.id === id);
   return found || null;
 };
@@ -291,7 +214,7 @@ export const fetchUserProducts = async (sellerId: string): Promise<Product[]> =>
     }
   }
 
-  const allLocal = [...getLocalCustomProducts(), ...INITIAL_DEMO_PRODUCTS];
+  const allLocal = [...getLocalCustomProducts(), ...CATALOG_PRODUCTS];
   return allLocal.filter((p) => p.sellerId === sellerId);
 };
 
@@ -309,9 +232,9 @@ export const updateProductStatus = async (productId: string, status: 'available'
   const updated = custom.map((p) => (p.id === productId ? { ...p, status } : p));
   saveLocalCustomProducts(updated);
 
-  const demoItem = INITIAL_DEMO_PRODUCTS.find((p) => p.id === productId);
-  if (demoItem) {
-    demoItem.status = status;
+  const catalogItem = CATALOG_PRODUCTS.find((p) => p.id === productId);
+  if (catalogItem) {
+    catalogItem.status = status;
   }
 };
 
@@ -342,8 +265,8 @@ export const deleteProductListing = async (productId: string, storagePaths: stri
 
   const custom = getLocalCustomProducts();
   saveLocalCustomProducts(custom.filter((p) => p.id !== productId));
-  const idx = INITIAL_DEMO_PRODUCTS.findIndex((p) => p.id === productId);
+  const idx = CATALOG_PRODUCTS.findIndex((p) => p.id === productId);
   if (idx !== -1) {
-    INITIAL_DEMO_PRODUCTS.splice(idx, 1);
+    CATALOG_PRODUCTS.splice(idx, 1);
   }
 };

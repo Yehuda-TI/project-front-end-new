@@ -4,13 +4,14 @@ import { useAuth } from '@/contexts/AuthContext';
 import { 
   ShoppingBag, 
   Search, 
-  PlusCircle, 
+  Sparkles, 
+  Heart, 
   User as UserIcon, 
   LogOut, 
   Menu, 
   X, 
-  Package, 
-  ChevronDown 
+  ChevronDown,
+  Bot
 } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
@@ -24,7 +25,7 @@ export const Navbar: React.FC = () => {
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      navigate(`/marketplace?q=${encodeURIComponent(searchQuery.trim())}`);
+      navigate(`/catalog?q=${encodeURIComponent(searchQuery.trim())}`);
       setMobileMenuOpen(false);
     }
   };
@@ -34,7 +35,7 @@ export const Navbar: React.FC = () => {
       await logout();
       setUserDropdownOpen(false);
       setMobileMenuOpen(false);
-      navigate('/');
+      navigate('/login');
     } catch (err) {
       console.error('Gagal logout:', err);
     }
@@ -48,7 +49,7 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-16 gap-4">
           
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 flex-shrink-0 group">
+          <Link to="/catalog" className="flex items-center gap-2.5 flex-shrink-0 group">
             <div className="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center text-white shadow-sm group-hover:bg-emerald-700 transition-colors">
               <ShoppingBag className="w-5 h-5" />
             </div>
@@ -57,7 +58,7 @@ export const Navbar: React.FC = () => {
                 Campus<span className="text-emerald-600">Market</span>
               </span>
               <span className="hidden sm:block text-[10px] text-slate-500 font-medium -mt-1 tracking-wider uppercase">
-                Student Marketplace
+                CRS Pre-Sales Assistant
               </span>
             </div>
           </Link>
@@ -67,7 +68,7 @@ export const Navbar: React.FC = () => {
             <div className="relative w-full">
               <input
                 type="text"
-                placeholder="Cari buku, laptop, perlengkapan kos..."
+                placeholder="Cari laptop, headphone, air fryer..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-10 pr-4 py-2 text-sm bg-slate-100 border border-slate-200 rounded-full focus:bg-white focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none transition-all placeholder:text-slate-400 text-slate-800"
@@ -79,31 +80,48 @@ export const Navbar: React.FC = () => {
           {/* Navigation Links (Desktop) */}
           <div className="hidden lg:flex items-center gap-1 text-sm font-medium">
             <Link 
-              to="/" 
+              to="/catalog" 
               className={`px-3 py-2 rounded-lg transition-colors ${
-                isActive('/') ? 'text-emerald-600 font-semibold' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                isActive('/catalog') || isActive('/') ? 'text-emerald-600 font-semibold' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
               }`}
             >
-              Beranda
+              Katalog
             </Link>
+
             <Link 
-              to="/marketplace" 
-              className={`px-3 py-2 rounded-lg transition-colors ${
-                isActive('/marketplace') ? 'text-emerald-600 font-semibold' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+              to="/chat" 
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-colors ${
+                isActive('/chat') 
+                  ? 'text-emerald-600 font-semibold bg-emerald-50' 
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
               }`}
             >
-              Jelajahi Produk
+              <Bot className="w-4 h-4 text-emerald-600" />
+              <span>Chat Asisten AI</span>
+              <span className="text-[10px] font-bold px-1.5 py-0.2 bg-emerald-600 text-white rounded-full">
+                CRS
+              </span>
+            </Link>
+
+            <Link 
+              to="/wishlist" 
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-colors ${
+                isActive('/wishlist') ? 'text-emerald-600 font-semibold' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+              }`}
+            >
+              <Heart className="w-4 h-4" />
+              <span>Wishlist</span>
             </Link>
           </div>
 
           {/* Action Button & Auth menu */}
           <div className="hidden sm:flex items-center gap-3">
             <Link
-              to="/create-product"
-              className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-semibold rounded-full bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200/60 transition-all hover:shadow-sm"
+              to="/chat"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-full bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition-all hover:scale-[1.02]"
             >
-              <PlusCircle className="w-4 h-4 text-emerald-600" />
-              <span>Jual Barang</span>
+              <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+              <span>Tanya AI Pre-Sales</span>
             </Link>
 
             {user ? (
@@ -137,7 +155,7 @@ export const Navbar: React.FC = () => {
                   >
                     <div className="px-4 py-2 border-b border-slate-100">
                       <p className="text-xs font-semibold text-slate-800 truncate">
-                        {profile?.displayName || 'Pengguna CampusMarket'}
+                        {profile?.displayName || 'Pengguna'}
                       </p>
                       <p className="text-[11px] text-slate-500 truncate">{user.email}</p>
                     </div>
@@ -148,16 +166,25 @@ export const Navbar: React.FC = () => {
                       className="flex items-center gap-2.5 px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-emerald-600 transition-colors"
                     >
                       <UserIcon className="w-4 h-4 text-slate-400" />
-                      Profil Saya
+                      Profil & Preferensi
                     </Link>
 
                     <Link
-                      to="/my-products"
+                      to="/wishlist"
                       onClick={() => setUserDropdownOpen(false)}
                       className="flex items-center gap-2.5 px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-emerald-600 transition-colors"
                     >
-                      <Package className="w-4 h-4 text-slate-400" />
-                      Kelola Iklan Saya
+                      <Heart className="w-4 h-4 text-slate-400" />
+                      Wishlist Saya
+                    </Link>
+
+                    <Link
+                      to="/chat"
+                      onClick={() => setUserDropdownOpen(false)}
+                      className="flex items-center gap-2.5 px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-emerald-600 transition-colors"
+                    >
+                      <Bot className="w-4 h-4 text-slate-400" />
+                      Chat Asisten AI
                     </Link>
 
                     <div className="border-t border-slate-100 my-1"></div>
@@ -210,7 +237,7 @@ export const Navbar: React.FC = () => {
             <div className="relative w-full">
               <input
                 type="text"
-                placeholder="Cari barang kampus..."
+                placeholder="Cari produk..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-9 pr-3 py-2 text-sm bg-slate-100 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
@@ -221,25 +248,27 @@ export const Navbar: React.FC = () => {
 
           <div className="space-y-1 pt-1">
             <Link
-              to="/"
+              to="/catalog"
               onClick={() => setMobileMenuOpen(false)}
               className="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100"
             >
-              Beranda
+              Katalog Produk
             </Link>
             <Link
-              to="/marketplace"
+              to="/chat"
               onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-emerald-600 hover:bg-emerald-50"
             >
-              Jelajahi Produk
+              <Bot className="w-4 h-4" />
+              <span>Chat Asisten AI (CRS)</span>
             </Link>
             <Link
-              to="/create-product"
+              to="/wishlist"
               onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 rounded-lg text-sm font-medium text-emerald-600 hover:bg-emerald-50"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100"
             >
-              + Jual Barang
+              <Heart className="w-4 h-4" />
+              <span>Wishlist Saya</span>
             </Link>
           </div>
 
@@ -254,14 +283,7 @@ export const Navbar: React.FC = () => {
                   onClick={() => setMobileMenuOpen(false)}
                   className="block px-3 py-2 text-sm text-slate-600 hover:bg-slate-100 rounded-lg"
                 >
-                  Profil Saya
-                </Link>
-                <Link
-                  to="/my-products"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block px-3 py-2 text-sm text-slate-600 hover:bg-slate-100 rounded-lg"
-                >
-                  Iklan Saya
+                  Profil & Preferensi
                 </Link>
                 <button
                   onClick={handleLogout}

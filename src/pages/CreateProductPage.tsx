@@ -142,13 +142,16 @@ export const CreateProductPage: React.FC = () => {
         sellerEmail: user.email || '',
         sellerPhotoURL: profile?.photoURL || user.photoURL || null,
         sellerWhatsapp: values.whatsappNumber || profile?.whatsappNumber || '',
+        name: values.title,
         title: values.title,
         description: values.description,
         price: values.price,
         category: values.category,
         condition: values.condition,
+        imageUrl: imageUrls[0] || '',
         imageUrls: imageUrls,
         storagePaths: storagePaths,
+        tags: [values.category.toLowerCase(), ...values.title.toLowerCase().split(' ')],
         status: 'available',
       });
 

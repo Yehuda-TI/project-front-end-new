@@ -12,38 +12,36 @@ service cloud.firestore {
       return isAuthenticated() && request.auth.uid == userId;
     }
     
-    // User Profile Document Rules
+    // User Profile Document & Sub-collections Rules
     match /users/{userId} {
-      // Siapapun dapat membaca profil publik seller
+      // Pembacaan profil publik diizinkan, tetapi penulisan hanya oleh pemilik akun
       allow read: if true;
-      
-      // Pengguna hanya bisa membuat dan mengubah profil miliknya sendiri
       allow create, update: if isOwner(userId);
-      
-      // Mencegah penghapusan profil oleh sembarang client
       allow delete: if false;
+
+      // Sub-koleksi Wishlist: users/{uid}/wishlist/{productId}
+      // Pengguna HANYA boleh membaca dan menulis dokumen wishlist miliknya sendiri
+      match /wishlist/{productId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      // Sub-koleksi Riwayat Chat: users/{uid}/chats/{chatId}/messages/{messageId}
+      // Pengguna HANYA boleh membaca dan mengelola riwayat chat percakapan miliknya sendiri
+      match /chats/{chatId} {
+        allow read, write: if isOwner(userId);
+
+        match /messages/{messageId} {
+          allow read, write: if isOwner(userId);
+        }
+      }
     }
     
-    // Product Listing Document Rules
+    // Product Listing Document Rules (Katalog & Produk Tambahan)
     match /products/{productId} {
-      // Siapapun bisa melihat daftar barang di marketplace
       allow read: if true;
-      
-      // Hanya pengguna yang sudah login yang dapat memasang iklan
-      // dan sellerId harus identik dengan UID akun yang sedang login
       allow create: if isAuthenticated() 
-        && request.resource.data.sellerId == request.auth.uid
-        && request.resource.data.price > 0
-        && request.resource.data.title is string
-        && request.resource.data.status in ['available', 'sold'];
-      
-      // Hanya pemilik barang yang dapat mengubah atau menandai terjual
-      allow update: if isAuthenticated()
-        && resource.data.sellerId == request.auth.uid
-        && request.resource.data.sellerId == resource.data.sellerId;
-      
-      // Hanya pemilik barang yang dapat menghapus iklan miliknya
-      allow delete: if isAuthenticated()
+        && request.resource.data.sellerId == request.auth.uid;
+      allow update, delete: if isAuthenticated()
         && resource.data.sellerId == request.auth.uid;
     }
   }

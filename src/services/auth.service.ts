@@ -5,7 +5,7 @@ import {
   sendPasswordResetEmail,
   updateProfile as updateFirebaseProfile
 } from 'firebase/auth';
-import { doc, setDoc, getDoc, updateDoc, serverTimestamp } from 'firebase/firestore';
+import { doc, setDoc, getDoc, updateDoc } from 'firebase/firestore';
 import { auth, db, isFirebaseConfigured } from '@/lib/firebase';
 import { UserProfile } from '@/types';
 
@@ -43,6 +43,12 @@ export const registerUser = async (
   displayName: string,
   whatsappNumber?: string
 ): Promise<UserProfile> => {
+  const defaultPrefs = {
+    budgetMin: 100000,
+    budgetMax: 10000000,
+    favoriteCategories: ['Laptop & Komputer', 'Smartphone & Tablet'],
+  };
+
   if (!isFirebaseConfigured) {
     // Mode demo / pengembangan lokal
     const demoProfile: UserProfile = {
@@ -53,8 +59,9 @@ export const registerUser = async (
       whatsappNumber: whatsappNumber || '',
       bio: 'Mahasiswa Kampus',
       campusName: '',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      preferences: defaultPrefs,
+      createdAt: Date.now(),
+      updatedAt: Date.now(),
     };
     const demoUser = {
       uid: demoProfile.uid,
@@ -83,8 +90,9 @@ export const registerUser = async (
     whatsappNumber: whatsappNumber || '',
     bio: 'Mahasiswa Kampus',
     campusName: '',
-    createdAt: serverTimestamp(),
-    updatedAt: serverTimestamp(),
+    preferences: defaultPrefs,
+    createdAt: Date.now(),
+    updatedAt: Date.now(),
   };
 
   try {
@@ -100,15 +108,20 @@ export const loginUser = async (email: string, pass: string) => {
   if (!isFirebaseConfigured) {
     // Mode demo: izinkan login dengan kredensial apa saja
     const demoProfile: UserProfile = {
-      uid: 'demo-seller-1',
+      uid: 'demo-user-1',
       displayName: email.split('@')[0],
       email,
       photoURL: null,
       whatsappNumber: '6281234567890',
       bio: 'Mahasiswa Kampus',
       campusName: 'Universitas Indonesia',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      preferences: {
+        budgetMin: 100000,
+        budgetMax: 10000000,
+        favoriteCategories: ['Laptop & Komputer', 'Audio & Aksesori'],
+      },
+      createdAt: Date.now() - 30 * 86400000,
+      updatedAt: Date.now(),
     };
     const demoUser = {
       uid: demoProfile.uid,
@@ -144,7 +157,12 @@ export const getUserProfile = async (uid: string): Promise<UserProfile | null> =
     const docRef = doc(db, 'users', uid);
     const snap = await getDoc(docRef);
     if (snap.exists()) {
-      return snap.data() as UserProfile;
+      const data = snap.data();
+      return {
+        ...data,
+        createdAt: typeof data.createdAt?.toMillis === 'function' ? data.createdAt.toMillis() : (data.createdAt || Date.now()),
+        updatedAt: typeof data.updatedAt?.toMillis === 'function' ? data.updatedAt.toMillis() : (data.updatedAt || Date.now()),
+      } as UserProfile;
     }
   }
 
@@ -156,11 +174,12 @@ export const updateUserProfileData = async (
   uid: string,
   data: Partial<Omit<UserProfile, 'uid' | 'email' | 'createdAt'>>
 ) => {
+  const timestamp = Date.now();
   if (isFirebaseConfigured) {
     const docRef = doc(db, 'users', uid);
     await updateDoc(docRef, {
       ...data,
-      updatedAt: serverTimestamp(),
+      updatedAt: timestamp,
     });
 
     if (data.displayName && auth.currentUser) {
@@ -175,7 +194,7 @@ export const updateUserProfileData = async (
   // Update di localStorage untuk demo
   const localProfile = localStorage.getItem('campus_market_demo_profile');
   const existing = localProfile ? JSON.parse(localProfile) : {};
-  const updated = { ...existing, ...data, updatedAt: new Date() };
+  const updated = { ...existing, ...data, updatedAt: timestamp };
   localStorage.setItem('campus_market_demo_profile', JSON.stringify(updated));
 
   const localUser = localStorage.getItem('campus_market_demo_user');

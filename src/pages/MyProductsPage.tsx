@@ -66,7 +66,7 @@ export const MyProductsPage: React.FC = () => {
     if (!confirmDeleteProduct) return;
     setDeletingId(confirmDeleteProduct.id);
     try {
-      await deleteProductListing(confirmDeleteProduct.id, confirmDeleteProduct.storagePaths);
+      await deleteProductListing(confirmDeleteProduct.id, confirmDeleteProduct.storagePaths || []);
       setProducts((prev) => prev.filter((p) => p.id !== confirmDeleteProduct.id));
       success('Iklan barang berhasil dihapus.');
       setConfirmDeleteProduct(null);

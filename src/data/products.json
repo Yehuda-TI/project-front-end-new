@@ -1,0 +1,272 @@
+[
+  {
+    "id": "prod-001",
+    "name": "ASUS Vivobook 14 A1404 Intel Core i5",
+    "category": "Laptop & Komputer",
+    "price": 8499000,
+    "description": "Laptop ringan 14 inci dengan prosesor Intel Core i5-1335U, RAM 16GB, SSD 512GB NVMe. Layar FHD IPS anti-glare, ideal untuk multitasking, coding, dan tugas kuliah harian.",
+    "tags": ["laptop", "asus", "intel", "core i5", "ssd", "ram 16gb", "kuliah", "kerja", "ringan"],
+    "imageUrl": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-002",
+    "name": "Lenovo IdeaPad Slim 3 Ryzen 5 7520U",
+    "category": "Laptop & Komputer",
+    "price": 7299000,
+    "description": "Laptop efisien bertenaga AMD Ryzen 5 7520U, RAM 8GB LPDDR5, 512GB SSD. Baterai tahan hingga 10 jam dan mendukung rapid charge, sangat cocok untuk mahasiswa on-the-go.",
+    "tags": ["laptop", "lenovo", "ryzen", "amd", "hemat daya", "tipis", "kuliah"],
+    "imageUrl": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-003",
+    "name": "MacBook Air M2 13.6 Inci 256GB",
+    "category": "Laptop & Komputer",
+    "price": 14999000,
+    "description": "Apple MacBook Air dengan chip M2 revolusioner. Desain unibody tipis tanpa kipas (silent), Liquid Retina display 500 nits, dan baterai hingga 18 jam.",
+    "tags": ["macbook", "apple", "m2", "laptop premium", "desain grafis", "editing", "baterai awet"],
+    "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-004",
+    "name": "Acer Nitro V 15 Gaming RTX 2050",
+    "category": "Laptop & Komputer",
+    "price": 10899000,
+    "description": "Laptop gaming terjangkau dengan Intel Core i5-13420H dan GPU NVIDIA GeForce RTX 2050 4GB. Layar 144Hz 15.6 inci FHD, lancar untuk gaming e-sports dan rendering 3D.",
+    "tags": ["laptop", "gaming", "acer", "nitro", "rtx", "nvidia", "144hz", "render"],
+    "imageUrl": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-005",
+    "name": "Samsung Galaxy A55 5G 8/256GB",
+    "category": "Smartphone & Tablet",
+    "price": 5799000,
+    "description": "Smartphone kelas menengah premium dengan layar Super AMOLED 120Hz, kamera utama 50MP OIS dengan Nightography, bodi kaca Gorilla Glass Victus+ tahan air IP67.",
+    "tags": ["smartphone", "hp", "samsung", "galaxy", "5g", "kamera bagus", "amoled", "tahan air"],
+    "imageUrl": "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-006",
+    "name": "Xiaomi Redmi Note 13 Pro 4G 8/256GB",
+    "category": "Smartphone & Tablet",
+    "price": 3499000,
+    "description": "HP all-rounder dengan kamera ultra-clear 200MP OIS, layar AMOLED 120Hz tajam, dan pengisian daya turbo 67W. Pilihan terbaik untuk fotografi budget.",
+    "tags": ["hp", "xiaomi", "redmi", "kamera 200mp", "murah", "fast charging", "amoled"],
+    "imageUrl": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-007",
+    "name": "iPhone 13 128GB Midnight",
+    "category": "Smartphone & Tablet",
+    "price": 9999000,
+    "description": "iPhone dengan chip A15 Bionic bertenaga, sistem kamera ganda canggih dengan Cinematic Mode, layar Super Retina XDR cerah, dan ketahanan air IP68.",
+    "tags": ["apple", "iphone", "iphone 13", "ios", "kamera video", "vlog", "stabilizer"],
+    "imageUrl": "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-008",
+    "name": "Xiaomi Pad 6 8/256GB Snapdragon 870",
+    "category": "Smartphone & Tablet",
+    "price": 4999000,
+    "description": "Tablet 11 inci resolusi 2.8K 144Hz dengan 4 speaker stereo Dolby Atmos. Sangat responsif untuk mencatat materi kuliah, membaca jurnal, dan streaming.",
+    "tags": ["tablet", "xiaomi", "snapdragon", "layar besar", "catatan", "stylus", "kuliah"],
+    "imageUrl": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-009",
+    "name": "iPad 10th Gen 64GB Wi-Fi Pink",
+    "category": "Smartphone & Tablet",
+    "price": 6499000,
+    "description": "Desain modern layar Liquid Retina 10.9 inci, ditenagai chip A14 Bionic. Kompatibel dengan Apple Pencil dan Magic Keyboard Folio untuk produktivitas belajar.",
+    "tags": ["ipad", "apple", "tablet", "apple pencil", "kuliah", "menggambar", "multitasking"],
+    "imageUrl": "https://images.unsplash.com/photo-1561154464-82e9adf32764?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-010",
+    "name": "Sony WH-1000XM5 Wireless Noise Cancelling",
+    "category": "Audio & Aksesori",
+    "price": 4999000,
+    "description": "Headphone flagship dengan Active Noise Cancellation (ANC) terbaik di industri, mikrofon jernih AI, serta daya tahan baterai 30 jam. Suara imersif Hi-Res Audio.",
+    "tags": ["headphone", "sony", "anc", "noise cancelling", "bluetooth", "audio premium", "belajar fokus"],
+    "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-011",
+    "name": "Soundcore Space One ANC Headphone",
+    "category": "Audio & Aksesori",
+    "price": 1299000,
+    "description": "Headphone peredam bising adaptif 2X lebih kuat meredam suara percakapan. Driver audio 40mm bersertifikasi Hi-Res Wireless, baterai hingga 55 jam playtime.",
+    "tags": ["headphone", "anker", "soundcore", "anc", "budget anc", "bass mantap", "baterai awet"],
+    "imageUrl": "https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-012",
+    "name": "Moondrop Space Travel TWS ANC",
+    "category": "Audio & Aksesori",
+    "price": 389000,
+    "description": "TWS berdesain futuristik transparan dengan tuning audio audiophile khas Moondrop, latensi rendah 55ms untuk game, dan fitur ANC peredam bising aktif.",
+    "tags": ["tws", "earphone", "moondrop", "audiophile", "murah", "gaming", "anc"],
+    "imageUrl": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-013",
+    "name": "Logitech MX Master 3S Wireless Mouse",
+    "category": "Audio & Aksesori",
+    "price": 1499000,
+    "description": "Mouse ergonomis produktivitas nomor satu dengan sensor 8000 DPI yang bekerja di permukaan kaca, tombol klik senyap (quiet click), dan scroll MagSpeed magnetik.",
+    "tags": ["mouse", "logitech", "ergonomis", "produktivitas", "kantor", "coding", "bluetooth"],
+    "imageUrl": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-014",
+    "name": "Keychron K2 V2 Wireless Mechanical Keyboard",
+    "category": "Audio & Aksesori",
+    "price": 1150000,
+    "description": "Mechanical keyboard 75% compact dengan switch Gateron G Pro Brown, konektivitas Bluetooth 5.1 hingga 3 perangkat, dan layout ramah Mac & Windows.",
+    "tags": ["keyboard", "mechanical keyboard", "keychron", "wireless", "coding", "ngetik", "mac"],
+    "imageUrl": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-015",
+    "name": "Baseus Blade 100W Power Bank 20000mAh",
+    "category": "Audio & Aksesori",
+    "price": 799000,
+    "description": "Power bank ultra-tipis dengan output super cepat 100W Type-C. Mampu mengisi daya baterai laptop, MacBook, dan smartphone secara simultan.",
+    "tags": ["powerbank", "baseus", "100w", "laptop powerbank", "fast charging", "kuliah"],
+    "imageUrl": "https://images.unsplash.com/photo-1609592424368-2a818c7c72f1?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-016",
+    "name": "Canon EOS M50 Mark II Kit 15-45mm",
+    "category": "Kamera & Fotografi",
+    "price": 8999000,
+    "description": "Kamera mirrorless favorit konten kreator dengan sensor APS-C 24.1MP, Dual Pixel CMOS AF akurat, Eye Detection, layar sentuh vari-angle, dan video vertikal 4K.",
+    "tags": ["kamera", "canon", "mirrorless", "vlog", "youtube", "foto", "konten kreator"],
+    "imageUrl": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-017",
+    "name": "Sony ZV-E10 Mirrorless Vlog Camera",
+    "category": "Kamera & Fotografi",
+    "price": 9899000,
+    "description": "Kamera interchangeable-lens dibuat khusus untuk vlogger. Dilengkapi mikrofon directional 3-kapsul dengan windshield, tombol Product Showcase, dan background defocus.",
+    "tags": ["kamera", "sony", "vlog", "streaming", "podcast", "4k", "kreator"],
+    "imageUrl": "https://images.unsplash.com/photo-1502982720700-bfff97f2ecac?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-018",
+    "name": "DJI Osmo Mobile 6 Smartphone Gimbal",
+    "category": "Kamera & Fotografi",
+    "price": 1999000,
+    "description": "Stabilizer HP 3-axis dengan extension rod terintegrasi, ActiveTrack 6.0 untuk melacak objek bergerak otomatis, dan desain lipat ringkas muat di saku tas.",
+    "tags": ["gimbal", "stabilizer", "dji", "hp", "videografi", "vlog", "tiktok"],
+    "imageUrl": "https://images.unsplash.com/photo-1589872517865-e99d7a22df4f?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-019",
+    "name": "Kalkulator Ilmiah Casio FX-991EX ClassWiz",
+    "category": "Perlengkapan Belajar",
+    "price": 310000,
+    "description": "Kalkulator scientific resmi standar ujian teknik dan sains dengan 552 fungsi, display resolusi tinggi dot matrix, perhitungan matriks 4x4, integral numerik, dan QR code solver.",
+    "tags": ["kalkulator", "casio", "teknik", "ujian", "matematika", "kuliah", "sains"],
+    "imageUrl": "https://images.unsplash.com/photo-1611125832047-1d7ad1e8e48f?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-020",
+    "name": "Lampu Meja LED Baseus i-Wok Screenbar Monitor",
+    "category": "Perlengkapan Belajar",
+    "price": 379000,
+    "description": "Lampu gantung monitor komputer dengan pencahayaan asimetris tanpa pantulan silau layar. 3 pilihan temperatur warna cahaya untuk menjaga kesehatan mata saat begadang belajar.",
+    "tags": ["lampu", "lampu meja", "screenbar", "monitor", "belajar", "mata nyaman", "meja kerja"],
+    "imageUrl": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-021",
+    "name": "Meja Belajar Lipat Ergonomis Adjustable",
+    "category": "Perlengkapan Belajar",
+    "price": 175000,
+    "description": "Meja laptop lipat serbaguna untuk di kasur atau lantai kos. Ketinggian dan sudut kemiringan bisa diatur, dilengkapi laci kecil dan penahan tablet.",
+    "tags": ["meja", "meja lipat", "anak kos", "laptop", "ergonomis", "belajar"],
+    "imageUrl": "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-022",
+    "name": "Tas Ransel Laptop Mark Ryden Anti Maling Waterproof",
+    "category": "Perlengkapan Belajar",
+    "price": 450000,
+    "description": "Backpack laptop 15.6 inci berbahan Oxford waterproof tahan gores. Dilengkapi kunci kombinasi TSA anti-maling, port charging USB eksternal, dan kompartemen terorganisir.",
+    "tags": ["tas", "ransel", "backpack", "laptop", "kuliah", "anti air", "anti maling"],
+    "imageUrl": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-023",
+    "name": "Philips Air Fryer Digital HD9252 4.1L",
+    "category": "Peralatan Rumah Tangga",
+    "price": 1199000,
+    "description": "Air fryer dengan teknologi Rapid Air memasak makanan renyah dengan minyak hingga 90% lebih sedikit. Panel sentuh digital dengan 7 menu preset praktis untuk anak kos.",
+    "tags": ["air fryer", "philips", "masak", "anak kos", "sehat", "hemat listrik", "praktis"],
+    "imageUrl": "https://images.unsplash.com/photo-1585515320310-259814833e62?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-024",
+    "name": "Miyako Rice Cooker Mini 0.6 Liter MCM-606A",
+    "category": "Peralatan Rumah Tangga",
+    "price": 195000,
+    "description": "Penanak nasi mini hemat listrik (300 Watt) kapasitas 0.6 liter. Panci anti lengket bebas PFOA, sangat pas untuk porsi 1-2 orang anak kos.",
+    "tags": ["rice cooker", "magic com", "miyako", "anak kos", "mini", "hemat listrik", "murah"],
+    "imageUrl": "https://images.unsplash.com/photo-1544233726-9f1d2b27be8b?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-025",
+    "name": "Xiaomi Smart Air Purifier 4 Compact",
+    "category": "Peralatan Rumah Tangga",
+    "price": 1099000,
+    "description": "Pembersih udara ruangan ringkas dengan filtrasi efisiensi tinggi 99.97% partikel 0.3 mikron. Senyap saat tidur (20dB), dapat dikontrol via smartphone aplikasi Mi Home.",
+    "tags": ["air purifier", "xiaomi", "kamar kos", "udara bersih", "alergi", "debu", "smart home"],
+    "imageUrl": "https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-026",
+    "name": "Teko Listrik Pemanas Air Stainless Steel 1.8L",
+    "category": "Peralatan Rumah Tangga",
+    "price": 85000,
+    "description": "Electric kettle cepat mendidihkan air dalam 3 menit. Dilengkapi fitur otomatis mati ketika mendidih dan proteksi anti kering (dry-boil protection).",
+    "tags": ["teko listrik", "kettle", "kopi", "mie instan", "anak kos", "cepat mendidih", "murah"],
+    "imageUrl": "https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-027",
+    "name": "Monitor LG 24 Inci Full HD IPS 100Hz 24MR400",
+    "category": "Laptop & Komputer",
+    "price": 1289000,
+    "description": "Monitor produktivitas IPS 24 inci dengan refresh rate 100Hz halus, AMD FreeSync, dan desain bezel tipis tiga sisi. Nyaman untuk split-screen coding dan mengetik dokumen.",
+    "tags": ["monitor", "lg", "ips", "100hz", "layar tambahan", "coding", "kerja"],
+    "imageUrl": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-028",
+    "name": "Kamera Aksi GoPro HERO10 Black 5.3K",
+    "category": "Kamera & Fotografi",
+    "price": 4399000,
+    "description": "Action cam tangguh anti air hingga 10 meter tanpa housing tambahan. Rekaman video 5.3K60fps dengan stabilisasi canggih HyperSmooth 4.0 dan Horizon Leveling.",
+    "tags": ["gopro", "action cam", "kamera", "outdoor", "olahraga", "vlog", "anti air"],
+    "imageUrl": "https://images.unsplash.com/photo-1565849904461-04a58ad377e0?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-029",
+    "name": "Speaker Bluetooth JBL GO 3 Portable Waterproof",
+    "category": "Audio & Aksesori",
+    "price": 549000,
+    "description": "Speaker mini portabel dengan suara JBL Pro Sound bertenaga dan bass mantap. Sertifikasi tahan air & debu IP67, siap dibawa nongkrong di kampus atau kamar kos.",
+    "tags": ["speaker", "jbl", "bluetooth", "portabel", "tahan air", "musik", "bass"],
+    "imageUrl": "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "prod-030",
+    "name": "Setrika Uap Genggam Portable Travel Steamer",
+    "category": "Peralatan Rumah Tangga",
+    "price": 145000,
+    "description": "Steamer pakaian uap vertikal yang praktis merapikan kemeja dan jas kuliah tanpa perlu meja setrika. Cepat panas dalam 30 detik dan membunuh 99% bakteri pakaian.",
+    "tags": ["setrika", "steamer", "baju", "kemeja", "anak kos", "praktis", "travel"],
+    "imageUrl": "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=800&q=80"
+  }
+]
