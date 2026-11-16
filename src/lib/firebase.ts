@@ -7,13 +7,34 @@ import { getStorage, FirebaseStorage } from 'firebase/storage';
 const envApiKey = import.meta.env.VITE_FIREBASE_API_KEY;
 const envProjectId = import.meta.env.VITE_FIREBASE_PROJECT_ID;
 
+// Filter key kosong, placeholder, atau key defunct yang sudah tidak aktif di server Google
+const isInvalidKey = (k?: string): boolean => {
+  if (!k) return true;
+  const t = k.trim();
+  return (
+    t === '' ||
+    t === 'your_api_key_here' ||
+    t.includes('YOUR_FIREBASE_API_KEY') ||
+    t === 'AIzaSyBCq8tDQPoIMHGOUf9L8Qpqg3hXCY8_Klg' // Kunci lama yang telah dinonaktifkan di Google Cloud
+  );
+};
+
+const isInvalidProject = (p?: string): boolean => {
+  if (!p) return true;
+  const t = p.trim();
+  return (
+    t === '' ||
+    t === 'your_project_id' ||
+    t.includes('your-project') ||
+    t === 'campus-market-demo'
+  );
+};
+
 export const isFirebaseConfigured = Boolean(
   envApiKey &&
-  envApiKey.trim() !== '' &&
-  envApiKey !== 'your_api_key_here' &&
+  !isInvalidKey(envApiKey) &&
   envProjectId &&
-  envProjectId.trim() !== '' &&
-  envProjectId !== 'your_project_id'
+  !isInvalidProject(envProjectId)
 );
 
 // Jika belum dikonfigurasi, gunakan fallback dummy config yang aman agar SDK tidak throw error

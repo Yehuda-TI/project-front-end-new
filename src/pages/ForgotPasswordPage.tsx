@@ -44,8 +44,8 @@ export const ForgotPasswordPage: React.FC = () => {
   return (
     <div className="min-h-[75vh] flex flex-col justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center space-y-2">
-        <Link to="/" className="inline-flex items-center gap-2 mb-2">
-          <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white shadow-md shadow-indigo-100">
+        <Link to="/catalog" className="inline-flex items-center gap-2 mb-2">
+          <div className="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center text-white shadow-md shadow-emerald-100">
             <ShoppingBag className="w-5 h-5" />
           </div>
         </Link>

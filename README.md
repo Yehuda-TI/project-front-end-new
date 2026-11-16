@@ -1,4 +1,4 @@
-# CampusMarket — Asisten Pre-Sales E-Commerce (CRS + LLM) 🎓🤖🛍️
+# Campus Market — Asisten Pre-Sales E-Commerce (CRS + LLM) 🎓🤖🛍️
 
 Aplikasi web asisten pre-sales e-commerce cerdas berbasis kolaborasi **Conversational Recommender System (CRS)** dan **Large Language Model (LLM)**. Dikembangkan sebagai implementasi prototipe tugas akhir/final project berdasarkan prinsip paper ilmiah:  
 > **"Conversational Recommender System and Large Language Model Are Made for Each Other in E-commerce Pre-sales Dialogue"**
