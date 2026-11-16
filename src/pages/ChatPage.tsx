@@ -95,7 +95,7 @@ export const ChatPage: React.FC = () => {
 
     setInputText('');
 
-    // 1. Tambahkan pesan user ke UI & Firestore
+    // 1. Tambahkan pesan user ke UI
     const userMsg: ChatMessage = {
       id: `msg-user-${Date.now()}`,
       sender: 'user',
@@ -104,10 +104,14 @@ export const ChatPage: React.FC = () => {
     };
 
     setMessages((prev) => [...prev, userMsg]);
-    await saveChatMessage(activeUserId, userMsg);
+    setLoading(true);
+
+    // Simpan pesan user secara non-blocking agar tidak menunda jawaban AI
+    saveChatMessage(activeUserId, userMsg).catch((err) =>
+      console.warn('Gagal menyimpan chat pengguna:', err)
+    );
 
     // 2. Panggil Layanan CRS + LLM
-    setLoading(true);
     try {
       const result = await generatePresalesDialogue(text, {
         grounded: groundedMode,
@@ -126,14 +130,24 @@ export const ChatPage: React.FC = () => {
       };
 
       setMessages((prev) => [...prev, assistantMsg]);
-      await saveChatMessage(activeUserId, assistantMsg);
+      saveChatMessage(activeUserId, assistantMsg).catch((err) =>
+        console.warn('Gagal menyimpan chat asisten:', err)
+      );
 
-      if (result.discardedIdsCount > 0) {
+      if (result.discardedIdsCount > 0 && groundedMode) {
         info(`Sistem mendeteksi dan memblokir ${result.discardedIdsCount} ID produk yang tidak ada di katalog (anti-halusinasi aktif).`);
       }
     } catch (err: any) {
       console.error('Chat error:', err);
-      toastError('Gagal memproses rekomendasi AI. Mencoba mode fallback...');
+      // Fallback respons darurat agar asisten PASTI membalas
+      const fallbackMsg: ChatMessage = {
+        id: `msg-asst-fallback-${Date.now()}`,
+        sender: 'assistant',
+        text: 'Halo! Saya siap membantu menemukan perlengkapan belajar dan gadget terbaik di Campus Market. Silakan sebutkan barang atau spesifikasi yang Anda cari!',
+        createdAt: Date.now(),
+      };
+      setMessages((prev) => [...prev, fallbackMsg]);
+      saveChatMessage(activeUserId, fallbackMsg).catch((e) => console.warn(e));
     } finally {
       setLoading(false);
     }

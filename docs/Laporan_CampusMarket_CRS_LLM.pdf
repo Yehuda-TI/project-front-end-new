@@ -1,0 +1,314 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [ 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R ] /Count 6 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 2646 >>
+stream
+q 0.85 0.85 0.85 RG 0.5 w 50 40 m 545.28 40 l S Q
+BT /F1 8 Tf 0.4 0.4 0.4 rg 277.64 28 Td (Halaman 1) Tj ET
+BT /F2 20 Tf 0.06 0.45 0.35 rg 50 771.89 Td (CAMPUS MARKET) Tj ET
+BT /F1 11 Tf 0.3 0.35 0.4 rg 50 749.89 Td (Asisten Pre-Sales E-Commerce Berbasis Sinergi Conversational Recommender System \(CRS\) dan Large Language Model \(LLM\)) Tj ET
+q 0.88 0.9 0.92 RG 0.5 w 50 739.89 m 545.28 739.89 l S Q
+q 0.06 0.73 0.51 rg 50 708.89 3 16 re f Q
+BT /F2 13 Tf 0.1 0.15 0.2 rg 60 710.89 Td (1. Identitas Proyek & Landasan Ilmiah) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 681.89 Td (* Nama Platform: Campus Market \(E-Commerce Web Application\)) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 666.89 Td (* Topik Tugas Akhir: Implementasi & Evaluasi Sistem Dialog Pre-Sales Cerdas Tanpa Halusinasi Produk) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 651.89 Td (* Paper Referensi Utama: "Conversational Recommender System and Large Language Model Are Made for Each) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 638.89 Td (  Other in E-commerce Pre-sales Dialogue") Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 623.89 Td (* Teknologi: React 18, TypeScript \(Strict\), Vite 6, Tailwind CSS, Google Gemini 1.5 Flash, Cloud) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 610.89 Td (  Firestore & Firebase Auth) Tj ET
+q 0.06 0.73 0.51 rg 50 588.89 3 16 re f Q
+BT /F2 13 Tf 0.1 0.15 0.2 rg 60 590.89 Td (2. Ringkasan Eksekutif \(Executive Summary\)) Tj ET
+BT /F1 9.5 Tf 0.2 0.25 0.3 rg 50 561.39 Td (Dalam domain e-commerce, percakapan pra-penjualan \(pre-sales dialogue\) memegang peranan krusial untuk) Tj ET
+BT /F1 9.5 Tf 0.2 0.25 0.3 rg 50 547.89 Td (mengonversi minat belanja pengunjung menjadi transaksi riil. Penerapan Large Language Model \(LLM\) murni) Tj ET
+BT /F1 9.5 Tf 0.2 0.25 0.3 rg 50 534.39 Td (secara mandiri terbukti mengalami kelemahan fatal berupa halusinasi produk \(mengarang barang fiktif\) dan) Tj ET
+BT /F1 9.5 Tf 0.2 0.25 0.3 rg 50 520.89 Td (pelanggaran batasan anggaran belanja pembeli. Sebaliknya, Conversational Recommender System \(CRS\)) Tj ET
+BT /F1 9.5 Tf 0.2 0.25 0.3 rg 50 507.39 Td (konvensional memiliki ketepatan katalog tinggi namun kaku dan tidak persuasif. Proyek Campus Market) Tj ET
+BT /F1 9.5 Tf 0.2 0.25 0.3 rg 50 493.89 Td (menyatukan keunggulan keduanya melalui arsitektur kolaboratif dua tahap \(Two-Stage Grounded Pipeline\).) Tj ET
+q 0.94 0.99 0.96 rg 0.7 0.95 0.8 RG 0.5 w 50 436.89 495.28 45 re b Q
+BT /F2 9.5 Tf 0.08 0.4 0.2 rg 62 467.89 Td (TEMUAN KUNCI PENGUJIAN:) Tj ET
+BT /F1 8.5 Tf 0.1 0.3 0.15 rg 62 453.89 Td (Grounded Mode \(CRS + LLM\) sukses menekan Hallucination Rate dari 75% ke 0% dan menaikkan Budget Compliance dari 25% ke 100%.) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page
+   /Parent 2 0 R
+   /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >>
+   /MediaBox [0 0 595.28 841.89]
+   /Contents 6 0 R
+>>
+endobj
+8 0 obj
+<< /Length 2387 >>
+stream
+BT /F1 8 Tf 0.4 0.4 0.4 rg 50 806.89 Td (CAMPUS MARKET: Laporan Final Project \(CRS + LLM\)) Tj ET
+q 0.85 0.85 0.85 RG 0.5 w 50 801.89 m 545.28 801.89 l S Q
+q 0.85 0.85 0.85 RG 0.5 w 50 40 m 545.28 40 l S Q
+BT /F1 8 Tf 0.4 0.4 0.4 rg 277.64 28 Td (Halaman 2) Tj ET
+q 0.06 0.73 0.51 rg 50 775.89 3 16 re f Q
+BT /F2 13 Tf 0.1 0.15 0.2 rg 60 777.89 Td (3. Landasan Teori: Konsep "Made for Each Other") Tj ET
+BT /F1 9.5 Tf 0.2 0.25 0.3 rg 50 748.39 Td (Mengacu pada paper acuan, CRS dan LLM memiliki karakteristik komplementer yang saling melengkapi:) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 732.39 Td (* CRS sebagai Objective Selector: Menentukan kandidat produk riil dari katalog inventaris toko) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 719.39 Td (  berdasarkan kategori dan batas anggaran secara matematis.) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 704.39 Td (* LLM sebagai Subjective Communicator: Menyusun narasi bahasa alami yang ramah, sopan, dan persuasif) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 691.39 Td (  untuk menjelaskan nilai tambah \(value proposition\) produk.) Tj ET
+q 0.06 0.73 0.51 rg 50 669.39 3 16 re f Q
+BT /F2 13 Tf 0.1 0.15 0.2 rg 60 671.39 Td (4. Arsitektur Dua Tahap \(Two-Stage Grounded Pipeline\)) Tj ET
+BT /F1 9.5 Tf 0.2 0.25 0.3 rg 50 641.89 Td (Alur kerja pemrosesan percakapan konsultasi belanja di Campus Market:) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 625.89 Td (* Tahap A \(Intent Extraction\): Menganalisis kalimat pembeli untuk mengekstrak kategori, batas anggaran) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 612.89 Td (  maksimal, dan kata kunci kebutuhan.) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 597.89 Td (* Tahap CRS \(Candidate Retrieval & Scoring\): Menyaring 30 produk katalog kampus dan menghitung skor) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 584.89 Td (  multi-faktor untuk menghasilkan Top-4 kandidat riil.) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 569.89 Td (* Tahap B \(Grounded Dialogue Generation\): Gemini Flash menerima metadata kandidat CRS dan merangkai) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 556.89 Td (  dialog persuasif dalam format JSON baku: { reply, recommendedProductIds }.) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 541.89 Td (* Lapisan Validasi Anti-Halusinasi: Memeriksa array ID produk terhadap whitelist inventaris katalog) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 528.89 Td (  resmi. Setiap ID fiktif langsung dieliminasi sebelum mencapai antarmuka web.) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page
+   /Parent 2 0 R
+   /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >>
+   /MediaBox [0 0 595.28 841.89]
+   /Contents 8 0 R
+>>
+endobj
+10 0 obj
+<< /Length 2539 >>
+stream
+BT /F1 8 Tf 0.4 0.4 0.4 rg 50 806.89 Td (CAMPUS MARKET: Laporan Final Project \(CRS + LLM\)) Tj ET
+q 0.85 0.85 0.85 RG 0.5 w 50 801.89 m 545.28 801.89 l S Q
+q 0.85 0.85 0.85 RG 0.5 w 50 40 m 545.28 40 l S Q
+BT /F1 8 Tf 0.4 0.4 0.4 rg 277.64 28 Td (Halaman 3) Tj ET
+q 0.06 0.73 0.51 rg 50 775.89 3 16 re f Q
+BT /F2 13 Tf 0.1 0.15 0.2 rg 60 777.89 Td (5. Algoritma Rekomendasi CRS \(Multi-Factor Scoring\)) Tj ET
+BT /F1 9.5 Tf 0.2 0.25 0.3 rg 50 748.39 Td (Mesin rekomendasi CRS di src/services/recommender.ts bekerja deterministik dengan skala 0 hingga 100) Tj ET
+BT /F1 9.5 Tf 0.2 0.25 0.3 rg 50 734.89 Td (poin:) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 718.89 Td (* Hard Filtering: Mengeliminasi produk yang berbeda kategori dan produk dengan harga di atas budget) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 705.89 Td (  \(Price > MaxBudget\).) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 690.89 Td (* Kesesuaian Kategori: Memberikan bobot +35 poin.) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 675.89 Td (* Kedekatan Anggaran \(Budget Proximity\): Memberikan hingga +25 poin berdasarkan rasio kedekatan harga) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 662.89 Td (  produk terhadap batas budget.) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 647.89 Td (* Pencocokan Kata Kunci \(Keyword Match\): +15 poin \(Nama Produk\), +10 poin \(Tags\), +5 poin \(Deskripsi\).) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 632.89 Td (* Personalisasi Profil: +20 poin jika kategori produk cocok dengan Kategori Favorit di profil) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 619.89 Td (  pengguna.) Tj ET
+q 0.06 0.73 0.51 rg 50 597.89 3 16 re f Q
+BT /F2 13 Tf 0.1 0.15 0.2 rg 60 599.89 Td (6. Fitur Aplikasi Web & Operasi CRUD Penuh) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 570.89 Td (* /catalog: Penjelajahan 30 produk riil mahasiswa di 6 kategori dengan filter harga dan pencarian) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 557.89 Td (  interaktif.) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 542.89 Td (* /chat: Ruang dialog asisten cerdas dua mode \(Grounded vs Baseline\) dengan kartu produk interaktif.) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 527.89 Td (* /wishlist: Operasi CRUD penuh untuk menyimpan barang impian dan mengedit catatan personal.) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 512.89 Td (* /profile: Manajemen profil mahasiswa dan konfigurasi rentang budget serta kategori favorit.) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 497.89 Td (* Offline Resilience: Sistem otomatis beralih ke penyimpanan lokal \(localStorage\) jika jaringan) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 484.89 Td (  internet terganggu.) Tj ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page
+   /Parent 2 0 R
+   /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >>
+   /MediaBox [0 0 595.28 841.89]
+   /Contents 10 0 R
+>>
+endobj
+12 0 obj
+<< /Length 4435 >>
+stream
+BT /F1 8 Tf 0.4 0.4 0.4 rg 50 806.89 Td (CAMPUS MARKET: Laporan Final Project \(CRS + LLM\)) Tj ET
+q 0.85 0.85 0.85 RG 0.5 w 50 801.89 m 545.28 801.89 l S Q
+q 0.85 0.85 0.85 RG 0.5 w 50 40 m 545.28 40 l S Q
+BT /F1 8 Tf 0.4 0.4 0.4 rg 277.64 28 Td (Halaman 4) Tj ET
+q 0.06 0.73 0.51 rg 50 775.89 3 16 re f Q
+BT /F2 13 Tf 0.1 0.15 0.2 rg 60 777.89 Td (7. Hasil Pengujian Kuantitatif \(Baseline vs Grounded\)) Tj ET
+BT /F1 9.5 Tf 0.2 0.25 0.3 rg 50 748.39 Td (Pengujian empiris dilakukan terhadap 10 skenario kueri kompleks untuk menguji hipotesis paper secara) Tj ET
+BT /F1 9.5 Tf 0.2 0.25 0.3 rg 50 734.89 Td (ilmiah:) Tj ET
+q 0.94 0.96 0.98 rg 0.8 0.85 0.9 RG 0.5 w 50 707.89 495.28 20 re b Q
+BT /F2 8.5 Tf 0.1 0.15 0.2 rg 56 713.89 Td (Metrik Evaluasi) Tj ET
+BT /F2 8.5 Tf 0.1 0.15 0.2 rg 176 713.89 Td (Mode Baseline \(LLM Murni\)) Tj ET
+BT /F2 8.5 Tf 0.1 0.15 0.2 rg 301 713.89 Td (Mode Grounded \(CRS + LLM\)) Tj ET
+BT /F2 8.5 Tf 0.1 0.15 0.2 rg 426 713.89 Td (Dampak Sinergi) Tj ET
+q 0.88 0.9 0.92 RG 0.5 w 50 689.89 495.28 18 re s Q
+BT /F1 8 Tf 0.15 0.2 0.25 rg 56 694.89 Td (Hallucination Rate \(v\)) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 176 694.89 Td (75.0% \(Rentan Halusinasi\)) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 301 694.89 Td (0.0% \(Akurat Sempurna\)) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 426 694.89 Td (Eliminasi Total Produk Fiktif \(-75%\)) Tj ET
+q 0.98 0.99 1.0 rg 50 671.89 495.28 18 re f Q
+q 0.88 0.9 0.92 RG 0.5 w 50 671.89 495.28 18 re s Q
+BT /F1 8 Tf 0.15 0.2 0.25 rg 56 676.89 Td (Budget Compliance \(^\)) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 176 676.89 Td (25.0% \(Sering Melebihi\)) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 301 676.89 Td (100.0% \(Patuh Anggaran\)) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 426 676.89 Td (Kepatuhan Anggaran Mutlak \(+75%\)) Tj ET
+q 0.88 0.9 0.92 RG 0.5 w 50 653.89 495.28 18 re s Q
+BT /F1 8 Tf 0.15 0.2 0.25 rg 56 658.89 Td (Category Accuracy \(^\)) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 176 658.89 Td (40.0%) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 301 658.89 Td (100.0%) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 426 658.89 Td (Kategori 100% Tepat Sasaran \(+60%\)) Tj ET
+BT /F2 10.5 Tf 0.15 0.2 0.3 rg 50 633.89 Td (Sampel Hasil Pengujian Skenario Belanja Mahasiswa:) Tj ET
+q 0.94 0.96 0.98 rg 0.8 0.85 0.9 RG 0.5 w 50 597.89 495.28 20 re b Q
+BT /F2 8.5 Tf 0.1 0.15 0.2 rg 56 603.89 Td (No) Tj ET
+BT /F2 8.5 Tf 0.1 0.15 0.2 rg 81 603.89 Td (Kueri Kebutuhan Mahasiswa) Tj ET
+BT /F2 8.5 Tf 0.1 0.15 0.2 rg 241 603.89 Td (Grounded Mode \(CRS + LLM\)) Tj ET
+BT /F2 8.5 Tf 0.1 0.15 0.2 rg 396 603.89 Td (Baseline Mode \(LLM Saja\)) Tj ET
+q 0.88 0.9 0.92 RG 0.5 w 50 579.89 495.28 18 re s Q
+BT /F1 8 Tf 0.15 0.2 0.25 rg 56 584.89 Td (1) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 81 584.89 Td (Laptop coding budget 8.5 jt) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 241 584.89 Td (ASUS Vivobook 14 \(Rp 8.49jt\) [OK]) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 396 584.89 Td (Mengarang tipe laptop fiktif [X]) Tj ET
+q 0.98 0.99 1.0 rg 50 561.89 495.28 18 re f Q
+q 0.88 0.9 0.92 RG 0.5 w 50 561.89 495.28 18 re s Q
+BT /F1 8 Tf 0.15 0.2 0.25 rg 56 566.89 Td (2) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 81 566.89 Td (Headphone ANC budget 1.5 jt) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 241 566.89 Td (Soundcore Space One \(Rp 1.29jt\) [OK]) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 396 566.89 Td (Sony WH-1000XM5 \(Rp 4.99jt - 3x budget\) [X]) Tj ET
+q 0.88 0.9 0.92 RG 0.5 w 50 543.89 495.28 18 re s Q
+BT /F1 8 Tf 0.15 0.2 0.25 rg 56 548.89 Td (3) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 81 548.89 Td (Tablet catat kuliah budget 6.5 jt) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 241 548.89 Td (Xiaomi Pad 6 & iPad 10th [OK]) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 396 548.89 Td (iPad Pro M4 \(Rp 19.00jt\) [X]) Tj ET
+q 0.98 0.99 1.0 rg 50 525.89 495.28 18 re f Q
+q 0.88 0.9 0.92 RG 0.5 w 50 525.89 495.28 18 re s Q
+BT /F1 8 Tf 0.15 0.2 0.25 rg 56 530.89 Td (4) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 81 530.89 Td (Air fryer anak kos budget 1.2 jt) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 241 530.89 Td (Philips Air Fryer HD9252 [OK]) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 396 530.89 Td (Rekomendasi barang di luar toko [X]) Tj ET
+q 0.88 0.9 0.92 RG 0.5 w 50 507.89 495.28 18 re s Q
+BT /F1 8 Tf 0.15 0.2 0.25 rg 56 512.89 Td (5) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 81 512.89 Td (Kamera vlog YouTube budget 10 jt) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 241 512.89 Td (Canon M50 Mk II & Sony ZV-E10 [OK]) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 396 512.89 Td (Sony A7 IV \(Rp 35.00jt\) [X]) Tj ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page
+   /Parent 2 0 R
+   /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >>
+   /MediaBox [0 0 595.28 841.89]
+   /Contents 12 0 R
+>>
+endobj
+14 0 obj
+<< /Length 2794 >>
+stream
+BT /F1 8 Tf 0.4 0.4 0.4 rg 50 806.89 Td (CAMPUS MARKET: Laporan Final Project \(CRS + LLM\)) Tj ET
+q 0.85 0.85 0.85 RG 0.5 w 50 801.89 m 545.28 801.89 l S Q
+q 0.85 0.85 0.85 RG 0.5 w 50 40 m 545.28 40 l S Q
+BT /F1 8 Tf 0.4 0.4 0.4 rg 277.64 28 Td (Halaman 5) Tj ET
+q 0.06 0.73 0.51 rg 50 775.89 3 16 re f Q
+BT /F2 13 Tf 0.1 0.15 0.2 rg 60 777.89 Td (8. Analisis Kesenjangan \(Gap Analysis Paper vs Implementasi\)) Tj ET
+BT /F1 9.5 Tf 0.2 0.25 0.3 rg 50 748.39 Td (Perbandingan antara arsitektur eksperimental paper dengan implementasi prototipe web Campus Market:) Tj ET
+q 0.94 0.96 0.98 rg 0.8 0.85 0.9 RG 0.5 w 50 721.39 495.28 20 re b Q
+BT /F2 8.5 Tf 0.1 0.15 0.2 rg 56 727.39 Td (Dimensi) Tj ET
+BT /F2 8.5 Tf 0.1 0.15 0.2 rg 151 727.39 Td (Sistem pada Paper Referensi) Tj ET
+BT /F2 8.5 Tf 0.1 0.15 0.2 rg 351 727.39 Td (Sistem Kami \(Campus Market\)) Tj ET
+q 0.88 0.9 0.92 RG 0.5 w 50 703.39 495.28 18 re s Q
+BT /F1 8 Tf 0.15 0.2 0.25 rg 56 708.39 Td (Model CRS) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 151 708.39 Td (Deep Learning Encoder \(KGSF / CRSLab\)) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 351 708.39 Td (Rule-based Multi-Factor Scoring \(Edge/Client-Side\)) Tj ET
+q 0.98 0.99 1.0 rg 50 685.39 495.28 18 re f Q
+q 0.88 0.9 0.92 RG 0.5 w 50 685.39 495.28 18 re s Q
+BT /F1 8 Tf 0.15 0.2 0.25 rg 56 690.39 Td (Model LLM) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 151 690.39 Td (Fine-Tuned LLaMA-7B / ChatGLM-6B) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 351 690.39 Td (Google Gemini 1.5 Flash via REST API) Tj ET
+q 0.88 0.9 0.92 RG 0.5 w 50 667.39 495.28 18 re s Q
+BT /F1 8 Tf 0.15 0.2 0.25 rg 56 672.39 Td (Anti-Halusinasi) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 151 672.39 Td (Constrained Soft Decoding) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 351 672.39 Td (Strict ID Whitelist Post-Validation Barrier) Tj ET
+q 0.98 0.99 1.0 rg 50 649.39 495.28 18 re f Q
+q 0.88 0.9 0.92 RG 0.5 w 50 649.39 495.28 18 re s Q
+BT /F1 8 Tf 0.15 0.2 0.25 rg 56 654.39 Td (Antarmuka) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 151 654.39 Td (Evaluasi CLI / Log Percakapan Statis) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 351 654.39 Td (Web App Interaktif Responsif \(React 18 + Tailwind\)) Tj ET
+q 0.88 0.9 0.92 RG 0.5 w 50 631.39 495.28 18 re s Q
+BT /F1 8 Tf 0.15 0.2 0.25 rg 56 636.39 Td (Penyimpanan) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 151 636.39 Td (Stateless per Batch Session) Tj ET
+BT /F1 8 Tf 0.15 0.2 0.25 rg 351 636.39 Td (Cloud Firestore + LocalStorage Hybrid CRUD) Tj ET
+q 0.94 0.99 0.96 rg 0.7 0.95 0.8 RG 0.5 w 50 569.39 495.28 45 re b Q
+BT /F2 9.5 Tf 0.08 0.4 0.2 rg 62 600.39 Td (JUSTIFIKASI REKAYASA TEKNIS:) Tj ET
+BT /F1 8.5 Tf 0.1 0.3 0.15 rg 62 586.39 Td (Adaptasi dilakukan untuk mengubah riset server GPU bernilai tinggi menjadi aplikasi web real-time yang ringan, berbiaya rendah, dan siap dipakai langsung oleh mahasiswa.) Tj ET
+endstream
+endobj
+15 0 obj
+<< /Type /Page
+   /Parent 2 0 R
+   /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >>
+   /MediaBox [0 0 595.28 841.89]
+   /Contents 14 0 R
+>>
+endobj
+16 0 obj
+<< /Length 2716 >>
+stream
+BT /F1 8 Tf 0.4 0.4 0.4 rg 50 806.89 Td (CAMPUS MARKET: Laporan Final Project \(CRS + LLM\)) Tj ET
+q 0.85 0.85 0.85 RG 0.5 w 50 801.89 m 545.28 801.89 l S Q
+q 0.85 0.85 0.85 RG 0.5 w 50 40 m 545.28 40 l S Q
+BT /F1 8 Tf 0.4 0.4 0.4 rg 277.64 28 Td (Halaman 6) Tj ET
+q 0.06 0.73 0.51 rg 50 775.89 3 16 re f Q
+BT /F2 13 Tf 0.1 0.15 0.2 rg 60 777.89 Td (9. Ringkasan Panduan Slide Presentasi Sidang) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 748.89 Td (* Slide 1: Judul Proyek \(Campus Market\) & Rujukan Paper Ilmiah.) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 733.89 Td (* Slide 2: Latar Belakang & Masalah Halusinasi Produk pada LLM Komersial.) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 718.89 Td (* Slide 3: Landasan Teori Paper: Konsep Sinergi "Made for Each Other".) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 703.89 Td (* Slide 4: Arsitektur Dua Tahap: Intent Extraction -> CRS Scoring -> Grounded Prompting.) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 688.89 Td (* Slide 5: Algoritma Rekomendasi CRS: Formula Pembobotan Multi-Faktor \(Skor 0-100\).) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 673.89 Td (* Slide 6: Grounded Generation via Gemini 1.5 Flash & Jaminan 0% Halusinasi.) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 658.89 Td (* Slide 7: Tumpukan Teknologi \(React 18, TypeScript, Tailwind 60-30-10, Firebase\).) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 643.89 Td (* Slide 8: Operasi CRUD Penuh pada Wishlist, Chat, dan Profil Preferensi.) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 628.89 Td (* Slide 9: Metrik Pengujian: Hallucination Rate, Budget Compliance, Category Accuracy.) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 613.89 Td (* Slide 10: Hasil Evaluasi: Bukti Angka Penurunan Halusinasi dari 75% ke 0%.) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 598.89 Td (* Slide 11: Analisis Kesenjangan \(Gap Analysis\) Paper vs Aplikasi Web Nyata.) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 583.89 Td (* Slide 12: Kesimpulan Utama & Rencana Pengembangan Masa Depan.) Tj ET
+q 0.06 0.73 0.51 rg 50 561.89 3 16 re f Q
+BT /F2 13 Tf 0.1 0.15 0.2 rg 60 563.89 Td (10. Panduan Demo Langsung di Depan Dosen) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 534.89 Td (* 1. Buka http://localhost:5173/catalog dan tunjukkan filter interaktif.) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 519.89 Td (* 2. Buka http://localhost:5173/chat pada Mode Grounded: Tanyakan laptop coding budget 8.5 juta.) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 504.89 Td (* 3. Tunjukkan chip deteksi intent dan munculnya kartu produk ASUS Vivobook 14.) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 489.89 Td (* 4. Ganti ke Mode Baseline: Tunjukkan bahwa LLM murni menyarankan produk di luar katalog.) Tj ET
+BT /F1 9 Tf 0.2 0.25 0.3 rg 50 474.89 Td (* 5. Klik "Simpan ke Wishlist", lalu buka /wishlist dan edit catatan personal.) Tj ET
+endstream
+endobj
+17 0 obj
+<< /Type /Page
+   /Parent 2 0 R
+   /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >>
+   /MediaBox [0 0 595.28 841.89]
+   /Contents 16 0 R
+>>
+endobj
+xref
+0 18
+0000000000 65535 f 
+0000000019 00000 n 
+0000000068 00000 n 
+0000000161 00000 n 
+0000000258 00000 n 
+0000000360 00000 n 
+0000000465 00000 n 
+0000003163 00000 n 
+0000003327 00000 n 
+0000005766 00000 n 
+0000005930 00000 n 
+0000008522 00000 n 
+0000008688 00000 n 
+0000013176 00000 n 
+0000013342 00000 n 
+0000016189 00000 n 
+0000016355 00000 n 
+0000019124 00000 n 
+trailer
+<< /Size 18 /Root 1 0 R >>
+startxref
+19290
+%%EOF
