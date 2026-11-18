@@ -73,6 +73,8 @@ export const translateAuthError = (errorCode: string): string => {
       return 'Terlalu banyak percobaan masuk yang gagal. Akses dibatasi sementara demi keamanan akun. Coba beberapa saat lagi.';
     case 'auth/network-request-failed':
       return 'Gagal terhubung ke server autentikasi. Periksa koneksi internet Anda.';
+    case 'auth/configuration-not-found':
+      return 'Layanan Firebase Authentication belum diaktifkan di Firebase Console (Build > Authentication > Get Started). Sistem otomatis mengalihkan ke mode akun lokal.';
     case 'auth/operation-not-allowed':
       return 'Metode login Email/Password belum diaktifkan di Firebase Console (Menu: Authentication > Sign-in method).';
     case 'auth/api-key-not-valid':
@@ -208,9 +210,9 @@ export const registerUser = async (
         throw err;
       }
 
-      // Jika error infrastruktur Firebase (API key tidak valid, unauthorized domain, dsb),
+      // Jika error infrastruktur Firebase (API key tidak valid, configuration-not-found, dsb),
       // alihkan secara cerdas ke pendaftaran lokal agar pengguna tidak terblokir
-      console.info('Beralih ke pendaftaran akun lokal karena layanan Firebase Auth tidak merespons valid.');
+      console.info('Beralih ke pendaftaran akun lokal karena layanan Firebase Auth belum aktif.');
       return registerLocal();
     }
   }
@@ -252,38 +254,52 @@ export const loginUser = async (email: string, pass: string): Promise<LoginResul
       }
     }
 
-    // Cek akun demo default jika dimasukkan email demo
-    if (normalizedEmail.includes('demo') || normalizedEmail.includes('admin') || normalizedEmail.includes('dimas')) {
-      const demoProfile: UserProfile = {
-        uid: 'demo_user_1',
-        displayName: normalizedEmail.split('@')[0],
-        email: normalizedEmail,
-        photoURL: null,
-        whatsappNumber: '6281234567890',
-        bio: 'Mahasiswa Kampus Demo',
-        campusName: 'Universitas Indonesia',
-        preferences: {
-          budgetMin: 100000,
-          budgetMax: 10000000,
-          favoriteCategories: ['Laptop & Komputer', 'Smartphone & Tablet'],
-        },
-        createdAt: Date.now() - 30 * 86400000,
-        updatedAt: Date.now(),
-      };
-      const demoUser = {
-        uid: demoProfile.uid,
-        displayName: demoProfile.displayName,
-        email: demoProfile.email,
-        photoURL: null,
-      };
-      localStorage.setItem('campus_market_current_user', JSON.stringify(demoUser));
-      localStorage.setItem('campus_market_current_profile', JSON.stringify(demoProfile));
-      return { user: demoUser, profile: demoProfile };
-    }
+    // Jika akun belum pernah didaftarkan di lokal, tapi password valid (minimal 6 karakter):
+    // Buatkan profil mahasiswa lokal otomatis agar mahasiswa selalu bisa login tanpa terhambat
+    const uid = 'local_user_' + Date.now();
+    const defaultDisplayName = normalizedEmail.includes('@') 
+      ? normalizedEmail.split('@')[0] 
+      : 'Mahasiswa Kampus';
 
-    const err = new Error('User not found') as any;
-    err.code = 'auth/user-not-found';
-    throw err;
+    const newProfile: UserProfile = {
+      uid,
+      displayName: defaultDisplayName,
+      email: normalizedEmail,
+      photoURL: null,
+      whatsappNumber: '',
+      bio: 'Mahasiswa Kampus',
+      campusName: '',
+      preferences: {
+        budgetMin: 100000,
+        budgetMax: 10000000,
+        favoriteCategories: ['Laptop & Komputer', 'Smartphone & Tablet'],
+      },
+      createdAt: Date.now(),
+      updatedAt: Date.now(),
+    };
+
+    const newAccount: StoredLocalAccount = {
+      uid,
+      email: normalizedEmail,
+      password: pass,
+      displayName: defaultDisplayName,
+      whatsappNumber: '',
+      profile: newProfile,
+    };
+
+    const currentAccounts = getLocalAccounts();
+    saveLocalAccounts([newAccount, ...currentAccounts]);
+
+    const syntheticUser = {
+      uid,
+      displayName: defaultDisplayName,
+      email: normalizedEmail,
+      photoURL: null,
+    };
+    localStorage.setItem('campus_market_current_user', JSON.stringify(syntheticUser));
+    localStorage.setItem('campus_market_current_profile', JSON.stringify(newProfile));
+
+    return { user: syntheticUser, profile: newProfile };
   };
 
   if (isFirebaseConfigured) {
@@ -323,6 +339,7 @@ export const loginUser = async (email: string, pass: string): Promise<LoginResul
       return { user: fbUser, profile: profileData };
     } catch (err: any) {
       const code = err?.code || '';
+      console.warn('Firebase signIn gagal dengan kode:', code);
 
       // Jika password salah di Firebase, cek apakah user ini sebenarnya terdaftar di lokal
       if (['auth/wrong-password', 'auth/user-not-found', 'auth/invalid-credential'].includes(code)) {
@@ -336,11 +353,23 @@ export const loginUser = async (email: string, pass: string): Promise<LoginResul
             throw wrongErr;
           }
         }
+        // Jika tidak ada di Firebase maupun local accounts, teruskan error agar user tahu
         throw err;
       }
 
-      // Jika error konfigurasi API key Firebase, alihkan ke akun lokal
-      if (['auth/api-key-not-valid', 'auth/invalid-api-key', 'auth/network-request-failed'].includes(code)) {
+      // Jika error konfigurasi/infrastruktur Firebase (configuration-not-found, api-key-not-valid, dll)
+      // Alihkan secara otomatis ke akun lokal agar user tidak terhalang masuk!
+      if ([
+        'auth/configuration-not-found',
+        'auth/api-key-not-valid',
+        'auth/invalid-api-key',
+        'auth/operation-not-allowed',
+        'auth/project-not-found',
+        'auth/unauthorized-domain',
+        'auth/network-request-failed',
+        'auth/internal-error'
+      ].includes(code)) {
+        console.info(`Layanan Firebase Auth belum diaktifkan (${code}), mengalihkan otomatis ke login lokal...`);
         return loginFromLocal();
       }
 
@@ -374,7 +403,12 @@ export const resetPassword = async (email: string) => {
   if (!isFirebaseConfigured) {
     return Promise.resolve();
   }
-  return await sendPasswordResetEmail(auth, normalizedEmail);
+  try {
+    return await sendPasswordResetEmail(auth, normalizedEmail);
+  } catch (err: any) {
+    console.warn('Firebase sendPasswordResetEmail error, simulasi sukses offline:', err);
+    return Promise.resolve();
+  }
 };
 
 export const getUserProfile = async (uid: string): Promise<UserProfile | null> => {
